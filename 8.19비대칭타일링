@@ -4,6 +4,7 @@
 #include<ctime>
 using namespace std;
 int N;
+int MOD = 1000000007;
 
 long long cache[101][101];
 long long combination(int n, int r) {
@@ -17,7 +18,7 @@ long long combination(int n, int r) {
 long long slove(int n) {
 	long long sum = 0;
 	for (int width = 0; width * 2 <= n; width++)
-		sum += combination(n - width, width);
+		sum += combination(n - width, width) % MOD;
 
 	long long new_width, new_height;
 	long long overlap=1;
@@ -39,7 +40,7 @@ long long slove(int n) {
 			overlap += combination(new_width + new_height, new_width);
 		}
 	}
-	return sum - overlap;
+	return (sum - overlap)%MOD;
 }
 
 int main() {
