@@ -3,7 +3,7 @@
 #include<vector>
 #include<list>
 using namespace std;
-
+// ㅋㅋ
 void josephus(int n, int k) {
 	list<int> survivors;
 	for (int i = 1; i <= n; i++)
